@@ -9,7 +9,6 @@ function NavBar (){
             <Navbar bg="light" expand="lg">
               <Container>
                 <Navbar.Brand href="#home">Vinyl Store</Navbar.Brand>
-                <CartWidget />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto">
@@ -26,6 +25,7 @@ function NavBar (){
                         Coming Up
                       </NavDropdown.Item>
                     </NavDropdown>
+                    <CartWidget />
                   </Nav>
                 </Navbar.Collapse>
               </Container>

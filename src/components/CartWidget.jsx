@@ -1,13 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import {BsVinylFill} from 'react-icons/bs';
+import {TbShoppingCart} from 'react-icons/tb';
 
 export default function CartWidget (){
     return (
         <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">
-          <BsVinylFill />
+          <TbShoppingCart/>
           {' '}
             </Navbar.Brand>
         </Container>

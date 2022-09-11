@@ -12,13 +12,14 @@ function App() {
     <NavBar />
     <BrowserRouter>
     <Routes>
-      
-      <Route path='/shop/detail' element= {<ItemDetailContainer/>}/>
+      <Route path='/' element= {<ItemListContainer/>}/>
+      <Route path='/category/:id' element= {<ItemListContainer/>}/>
+      <Route path='/item/:id' element= {<ItemDetailContainer/>}/>
     </Routes>
       
     <div className="App">
       
-      <ItemListContainer greeting="Get ready for some new records!" />
+      
    
    
     </div>

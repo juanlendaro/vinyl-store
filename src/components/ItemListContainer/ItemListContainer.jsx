@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { useEffect } from "react";
 import ItemList from '../ItemList/ItemList';
-import albumsJson from '../../albums.json'  ;
+import albumsJson from '../../albums'  ;
 
 export default function ItemListContainer ({greeting}){
     const [albums, setAlbums] = useState ([]);

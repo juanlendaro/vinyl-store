@@ -6,7 +6,7 @@ const ItemDetail = ({item:{id,title,price,img}}) => {
         <div>{id}</div>
         <div>{title}</div>
         <div>{price}</div>
-        <div>{img}</div>
+        <img src= {img}/>
     </div>
   )
 }

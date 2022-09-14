@@ -31,7 +31,7 @@ export default function ItemListContainer ({greeting}){
         <h1> Hey! {greeting} </h1>
         <ItemList albums = {albums} />
         <div>
-            <ItemCount stock = {5} initial = {1} onAdd = {onAdd} />
+            <ItemCount stock = {11} initial = {1} onAdd = {onAdd} />
         </div>
         </>
     );

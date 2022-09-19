@@ -10,19 +10,19 @@ function NavBar (){
             <Navbar bg="light" expand="lg">
               <Container>
               
-                <Navbar.Brand componentClass={Link} href="/" to="/">Vinyl Store</Navbar.Brand>
+                <Navbar.Brand componentclass={Link} href="/" to="/">Vinyl Store</Navbar.Brand>
                 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto">
-                    <Nav.Link componentClass={Link} href="/" to="/">Home</Nav.Link>
+                    <Nav.Link componentclass={Link} href="/" to="/">Home</Nav.Link>
                     <Nav.Link href="#link">Contact us</Nav.Link>
                     <NavDropdown title="Albums" id="basic-nav-dropdown">
-                      <NavDropdown.Item componentClass={Link} href="/category/new" to="/category/new">New</NavDropdown.Item>
-                      <NavDropdown.Item componentClass={Link} href="/category/bestsellers" to="/category/bestsellers"> Best Sellers</NavDropdown.Item>
-                      <NavDropdown.Item componentClass={Link} href="/category/editorspick" to="/category/editorspick">Editor's Pick</NavDropdown.Item>
+                      <NavDropdown.Item componentclass={Link} href="/category/new" to="/category/new">New</NavDropdown.Item>
+                      <NavDropdown.Item componentclass={Link} href="/category/bestsellers" to="/category/bestsellers"> Best Sellers</NavDropdown.Item>
+                      <NavDropdown.Item componentclass={Link} href="/category/editorspick" to="/category/editorspick">Editor's Pick</NavDropdown.Item>
                       <NavDropdown.Divider />
-                      <NavDropdown.Item componentClass={Link} href="/category/comingup" to="/category/comingup">Coming Up</NavDropdown.Item>
+                      <NavDropdown.Item componentclass={Link} href="/category/comingup" to="/category/comingup">Coming Up</NavDropdown.Item>
                     </NavDropdown>
                     <CartWidget />
                   </Nav>

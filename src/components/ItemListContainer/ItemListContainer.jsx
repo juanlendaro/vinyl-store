@@ -2,37 +2,44 @@ import { useState } from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { useEffect } from "react";
 import ItemList from '../ItemList/ItemList';
-import albumsJson from '../../albums'  ;
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore';
+import { useParams } from "react-router-dom";
 
-export default function ItemListContainer ({greeting}){
-    const [albums, setAlbums] = useState ([]);
-
-    const getAlbums = (data, time)=> new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            if (data){
-                resolve (data)
-            }else{
-                reject ("error");
-            }
-        }, time);
-    });
-
-    useEffect (()=>{
-        getAlbums(albumsJson, 2000).then((res)=>{
-            setAlbums(res)
-        }).catch((err)=>console.log(err,"We were unable to find any albums"));
-    },[])
+export default function ItemListContainer ({}){
+    const [products, setProducts] = useState([]);
+    const {category} = useParams();
     
-    const onAdd = (contador) =>{
-        console.log ("El valor del contador es:", contador)
-    }
-    return (
-        <>
-        <h1> Hey! {greeting} </h1>
-        <ItemList albums = {albums} />
-        <div>
-            <ItemCount stock = {11} initial = {1} onAdd = {onAdd} />
-        </div>
-        </>
-    );
+    useEffect(() => {
+        const db = getFirestore();
+        
+        let myCollection
+        if(category==undefined){
+             myCollection = collection(db, 'products');
+            
+        } else{
+             myCollection = query(
+                collection(db, 'products'),
+                 where("category", "==", category)
+                 );
+            
+        }
+        getDocs(myCollection).then((data)=>{
+        
+            const auxProducts = data.docs.map((product)=> ({
+                ...product.data(),
+                id: product.id,
+            }));
+            
+            setProducts(auxProducts);
+        });    
+    }, [category]);
+    
+
+    return <ItemList products={products}/>
+    
+
+
+
+
+    
     };

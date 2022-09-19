@@ -1,9 +1,9 @@
 import Item from '../Item/Item'
 
-const ItemList = ({albums}) => {
+const ItemList = ({products}) => {
     return (
         <div>
-            {albums.length ? albums.map(album=><Item key={album.id} {...album} />) : <h2>Loading</h2>}
+            {products.map(products=><Item key={products.id} {...products} />)}
         </div>
     )
 }

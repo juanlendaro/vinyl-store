@@ -1,34 +1,35 @@
-import React from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import albumsJson from '../../albums'  ;
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState } from "react";
+import { ItemCount } from "../ItemCount/ItemCount";
+import { useEffect } from "react";
+import {doc, getDoc, getFirestore} from 'firebase/firestore';
+import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
-const ItemDetailContainer = () => {
-
-    const [item, setItem] = useState({});
-    const {id} = useParams()
-
-    useEffect(() => {
-      getItem().then (data=>{
-        if (data);
-        setItem(data);
-      })
-    }, [])
+export default function ItemDetailContainer ({}){
+    const [product, setProduct] = useState({});
+    const {id} = useParams();
     
-  
-  const getItem = () => { 
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve (albumsJson.find (p => p.id === id))
-        }, 2000);
+    useEffect(() => {
+        const db = getFirestore();
+        const refDoc = doc(db, 'products',id)
+               
+        getDoc(refDoc).then((album)=>{
         
-    })
-   }
-  
-    return (
-    <ItemDetail item = {item}/>
-  )
-}
+            const aux = {
+                ...album.data(),
+                id: album.id,
+            };
+            
+            setProduct(aux);
+        });    
+    }, [id]);
+    
 
-export default ItemDetailContainer
+    return <ItemDetail product={product}/>;    
+
+
+
+
+    
+    };

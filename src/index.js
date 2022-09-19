@@ -4,6 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCxr_Y-rL49u7EkEMhgl-KpRiaYBJx3O8E",
+  authDomain: "vynil-store-6e644.firebaseapp.com",
+  projectId: "vynil-store-6e644",
+  storageBucket: "vynil-store-6e644.appspot.com",
+  messagingSenderId: "1048967654726",
+  appId: "1:1048967654726:web:46720a7bd7572a3fa0c947"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

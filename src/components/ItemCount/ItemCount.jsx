@@ -1,9 +1,12 @@
 import React from 'react'
+import { useContext } from 'react';
 import { useState } from 'react';
+import { cartContext } from '../CartContext/CartContextComponent';
 
 export default function ItemCount({product}) {
 
     const [count, setCount] = useState(0);
+    const {cart, addToCart} = useContext(cartContext);
     function sum(){
        if (count<20){
         setCount (count + 1);
@@ -16,9 +19,7 @@ export default function ItemCount({product}) {
     }
 
     function onAdd() {
-        alert (
-            "You will add " + count + " copies of this album" 
-        );
+        addToCart(product, count);
     }
 
   return (

@@ -6,13 +6,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Checkout from './components/Checkout/Checkout'
 import Cart from './components/Cart/Cart'
+import { useState } from 'react';
+import CartContextComponent from './components/CartContext/CartContextComponent';
 
 
 function App() {
+    
   return (
     <>
-    <NavBar />
+    <CartContextComponent>
+    
     <BrowserRouter>
+    <NavBar />
     <Routes>
       <Route path='/' element= {<ItemListContainer/>}/>
       <Route path='/category/:category' element= {<ItemListContainer/>}/>
@@ -29,6 +34,7 @@ function App() {
     </div>
     
     </BrowserRouter>
+    </CartContextComponent>
     </>
   
    

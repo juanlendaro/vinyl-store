@@ -3,26 +3,39 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
-import { Link } from 'react-router-dom'
-
+import { LinkContainer } from 'react-router-bootstrap';
 function NavBar (){
       return (
             <Navbar bg="light" expand="lg">
               <Container>
-              
-                <Navbar.Brand componentclass={Link} href="/" to="/">Vinyl Store</Navbar.Brand>
-                
+              <LinkContainer to="/">
+                <Navbar.Brand href="#home">Vinyl Store</Navbar.Brand>
+                </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto">
-                    <Nav.Link componentclass={Link} href="/" to="/">Home</Nav.Link>
+                  <LinkContainer to="/">
+                    <Nav.Link>Home</Nav.Link>
+                  </LinkContainer>
                     <Nav.Link href="#link">Contact us</Nav.Link>
                     <NavDropdown title="Albums" id="basic-nav-dropdown">
-                      <NavDropdown.Item componentclass={Link} href="/category/new" to="/category/new">New</NavDropdown.Item>
-                      <NavDropdown.Item componentclass={Link} href="/category/bestsellers" to="/category/bestsellers"> Best Sellers</NavDropdown.Item>
-                      <NavDropdown.Item componentclass={Link} href="/category/editorspick" to="/category/editorspick">Editor's Pick</NavDropdown.Item>
+                    <LinkContainer to="/category/new">
+                      <NavDropdown.Item >New</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/category/bestsellers">
+                      <NavDropdown.Item>
+                        Best Sellers
+                      </NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/category/editorspick">
+                      <NavDropdown.Item>Editor's Pick</NavDropdown.Item>
+                      </LinkContainer>
                       <NavDropdown.Divider />
-                      <NavDropdown.Item componentclass={Link} href="/category/comingup" to="/category/comingup">Coming Up</NavDropdown.Item>
+                      <LinkContainer to="/category/upcoming">
+                      <NavDropdown.Item>
+                        Coming Up
+                      </NavDropdown.Item>
+                      </LinkContainer>
                     </NavDropdown>
                     <CartWidget />
                   </Nav>

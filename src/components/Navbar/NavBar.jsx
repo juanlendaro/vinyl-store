@@ -17,7 +17,6 @@ function NavBar (){
                   <LinkContainer to="/">
                     <Nav.Link>Home</Nav.Link>
                   </LinkContainer>
-                    <Nav.Link href="#link">Contact us</Nav.Link>
                     <NavDropdown title="Albums" id="basic-nav-dropdown">
                     <LinkContainer to="/category/new">
                       <NavDropdown.Item >New</NavDropdown.Item>
@@ -37,6 +36,12 @@ function NavBar (){
                       </NavDropdown.Item>
                       </LinkContainer>
                     </NavDropdown>
+                    <LinkContainer to="/cart">
+                    <Nav.Link>Cart</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to= "/checkout">
+                    <Nav.Link>Checkout</Nav.Link>
+                    </LinkContainer>
                     <CartWidget />
                   </Nav>
                 </Navbar.Collapse>

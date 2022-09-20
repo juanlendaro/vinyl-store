@@ -2,10 +2,13 @@ import React from 'react'
 import { useContext } from 'react';
 import { useState } from 'react';
 import { cartContext } from '../CartContext/CartContextComponent';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ItemCount({product}) {
 
     const [count, setCount] = useState(0);
+    const [removeButton, setRemoveButton] = useState (false);
     const {cart, addToCart} = useContext(cartContext);
     function sum(){
        if (count<20){
@@ -20,15 +23,27 @@ export default function ItemCount({product}) {
 
     function onAdd() {
         addToCart(product, count);
+        setRemoveButton(true);
     }
-
+    useEffect(() => {
+      console.log(cart);
+    },  [cart]);
+    
   return (
     <div>
         <span style={{cursor: "pointer"}} onClick={sum}>+</span>
         {count}
         <span style={{cursor: "pointer"}} onClick={res}>-</span>
         <br/>
-        <button onClick={onAdd}>Add to cart</button>
+        {removeButton? (
+            <>
+            Album added to cart.
+            <br />
+            <Link to='/'>Continue shopping</Link>
+            <Link to='/checkout'>Go to Checkout</Link>
+            </>
+            ) : (
+            <button onClick={onAdd}>Add to cart</button>)}
     </div>
   );
 }

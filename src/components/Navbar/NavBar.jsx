@@ -4,8 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
 import { LinkContainer } from 'react-router-bootstrap';
+import "./navbar.css"
 function NavBar (){
-      return (
+      return (<div className='navbar'>
             <Navbar bg="light" expand="lg">
               <Container>
               <LinkContainer to="/">
@@ -47,6 +48,7 @@ function NavBar (){
                 </Navbar.Collapse>
               </Container>
             </Navbar>
+            </div>
           );
         }
         

@@ -6,7 +6,7 @@ const Item = ({title, img, price, id})=>{
         <Link style={{ textDecoration: 'none' }} to={'/item/' + id}>
         <article className="card">
             <h3>{title}</h3>
-            <h3>{price}</h3>
+            <h3>${price}</h3>
 
             <img src={img} alt=""  />
         </article>

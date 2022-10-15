@@ -8,7 +8,7 @@ import "./navbar.css"
 function NavBar (){
       return (<div className='navbar'>
             <Navbar bg="light" expand="lg">
-              <Container>
+              <Container className='container'>
               <LinkContainer to="/">
                 <Navbar.Brand href="#home">Vinyl Store</Navbar.Brand>
                 </LinkContainer>

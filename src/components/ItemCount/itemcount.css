@@ -1,0 +1,16 @@
+span{
+    display: flex;
+    justify-content: center;
+}
+
+.count {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    font-size: 1.5em;
+}

@@ -1,9 +1,10 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import "./itemdetail.css"
 
 const ItemDetail = ({product}) => {
   return (
-    <article>
+    <article className='article'>
             <h1>{product.title}</h1>
             <h3>Price: {product.price}</h3>
 

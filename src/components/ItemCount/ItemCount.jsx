@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { cartContext } from '../CartContext/CartContextComponent';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import "./itemcount.css"
 
 export default function ItemCount({product}) {
 
@@ -32,18 +33,24 @@ export default function ItemCount({product}) {
   return (
     <div>
         <span style={{cursor: "pointer"}} onClick={sum}>+</span>
+        <div className='count'>
         {count}
+        </div>
         <span style={{cursor: "pointer"}} onClick={res}>-</span>
         <br/>
+        <div className='button'>
         {removeButton? (
             <>
             Album added to cart.
             <br />
-            <Link to='/'>Continue shopping</Link>
+            <Link to='/'>Continue shopping.</Link>
+            <br />
             <Link to='/checkout'>Go to Checkout</Link>
+            <br />
             </>
             ) : (
             <button onClick={onAdd}>Add to cart</button>)}
+            </div>
     </div>
   );
 }

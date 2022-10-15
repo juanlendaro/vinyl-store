@@ -1,6 +1,6 @@
 # Vinyl Store E-commerce
 
-E-commerce de albumes de vinilo desarrolado con React.
+E-commerce de albumes de vinilo desarrollado con React.
 
 ## Secciones
 

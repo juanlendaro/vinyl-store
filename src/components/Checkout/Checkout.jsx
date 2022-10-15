@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { cartContext } from '../CartContext/CartContextComponent';
 import { useContext } from 'react';
 import {addDoc,collection, getFirestore} from 'firebase/firestore';
+import "./checkout.css"
 
 
 export default function Checkout() {
@@ -26,6 +27,7 @@ function sendOrder(){
 }
   return (
     <>
+    <div className='checkoutcontainer'>
     {orderId ? ("Thanks! Your order ID is: " + orderId):
     (<div>
       <h1>  Finish your Order  </h1>
@@ -35,6 +37,7 @@ function sendOrder(){
       <button onClick={sendOrder}>Send</button>
     </div>
   )}
+  </div>
     </>
   )
 }

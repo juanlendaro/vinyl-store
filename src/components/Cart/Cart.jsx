@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { cartContext } from '../CartContext/CartContextComponent';
 import {BiTrash} from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import "./cart.css"
 
 export default function Cart() {
   
@@ -10,6 +11,7 @@ export default function Cart() {
 
   return (
     <>
+    <div className='cartcontainer'>
     {cart.map((item)=>(
       
       <div key={item.id}>
@@ -19,9 +21,10 @@ export default function Cart() {
       
     ))}
     <div>
-      You have in your cart:{totalCount} albums. You will pay {totalToPay} 
+      You have in your cart: {totalCount} albums.<br/> You will pay: $ {totalToPay} 
     </div>
     <Link to= '/checkout'> Go to Checkout</Link>
+    </div>
     </>
   )
 }

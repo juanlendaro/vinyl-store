@@ -32,13 +32,15 @@ export default function ItemCount({product}) {
     
   return (
     <div>
-        <span style={{cursor: "pointer"}} onClick={sum}>+</span>
+      <div className='spans'>
+        <span className='buttons' style={{cursor: "pointer"}} onClick={sum}>+</span>
         <div className='count'>
         {count}
         </div>
-        <span style={{cursor: "pointer"}} onClick={res}>-</span>
+        <span className='buttons' style={{cursor: "pointer"}} onClick={res}>-</span>
+        </div>
         <br/>
-        <div className='button'>
+        <div className='text'>
         {removeButton? (
             <>
             Album added to cart.
@@ -49,7 +51,7 @@ export default function ItemCount({product}) {
             <br />
             </>
             ) : (
-            <button onClick={onAdd}>Add to cart</button>)}
+            <button className='button' onClick={onAdd}>Add to cart</button>)}
             </div>
     </div>
   );

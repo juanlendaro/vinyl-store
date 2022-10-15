@@ -8,7 +8,7 @@ const ItemDetail = ({product}) => {
             <h1>{product.title}</h1>
             <h3>Price: {product.price}</h3>
 
-            <img src={product.img} alt="" style= {{width: "40rem"}} />
+            <img src={product.img} alt="" style= {{width: "34rem"}} />
             <ItemCount product= {product} />
         </article>
   )
